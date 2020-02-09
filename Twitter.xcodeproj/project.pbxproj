@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		248EF0B323F0C551001AAC04 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248EF0B223F0C551001AAC04 /* TweetCell.swift */; };
 		24AA711923EF6A0A00B4526A /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AA711823EF6A0A00B4526A /* HomeTableViewController.swift */; };
 		24F4071523EF5EA8000FF7DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F4071423EF5EA8000FF7DB /* LoginViewController.swift */; };
 		37D29B8621F90E3400984A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D29B8521F90E3400984A88 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		248EF0B223F0C551001AAC04 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		24AA711823EF6A0A00B4526A /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		24F4071423EF5EA8000FF7DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		37D29B8521F90E3400984A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				6EBCF53121DF07FE00451C03 /* Info.plist */,
 				24F4071423EF5EA8000FF7DB /* LoginViewController.swift */,
 				24AA711823EF6A0A00B4526A /* HomeTableViewController.swift */,
+				248EF0B223F0C551001AAC04 /* TweetCell.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				24AA711923EF6A0A00B4526A /* HomeTableViewController.swift in Sources */,
 				24F4071523EF5EA8000FF7DB /* LoginViewController.swift in Sources */,
+				248EF0B323F0C551001AAC04 /* TweetCell.swift in Sources */,
 				6EBCF54421E047A500451C03 /* TwitterAPICaller.swift in Sources */,
 				6EBCF52621DF07FC00451C03 /* AppDelegate.swift in Sources */,
 			);
