@@ -19,7 +19,6 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         loadTweet()
         myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
-        tableView.refreshControl
 
     }
     
