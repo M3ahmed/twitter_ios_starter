@@ -12,13 +12,18 @@ class HomeTableViewController: UITableViewController {
     
     var tweetArray = [NSDictionary]()
     var numberOfTweets: Int!
+    
+    let myRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadTweet()
+        myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
+        tableView.refreshControl
 
     }
     
-    func loadTweet(){
+    @objc func loadTweet(){
         
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["count" : 10]
@@ -28,6 +33,8 @@ class HomeTableViewController: UITableViewController {
             for tweet in tweets{
                 self.tweetArray.append(tweet)
             }
+            self.tableView.reloadData()
+            
         }, failure: { (Error) in
             print("Could not retrieve tweets")
         })
@@ -42,8 +49,20 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
         
-        cell.userNameLabel.text = "Some Name"
-        cell.tweetContentLabel.text = "Something"
+        let user = tweetArray[indexPath.row]["user"] as! NSDictionary
+        
+        cell.userNameLabel.text = user["name"] as? String
+            
+        cell.tweetContentLabel.text = tweetArray[indexPath.row]["text"] as? String
+        
+        let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)
+        
+        let data = try? Data(contentsOf: imageUrl!)
+        
+        if let importData = data {
+            cell.profileImageView.image = UIImage(data: importData)
+        }
+        
         return cell
     }
     
@@ -60,7 +79,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return tweetArray.count
     }
 
     
